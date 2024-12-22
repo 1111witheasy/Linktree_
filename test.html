@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Linktree</title>
+    <link rel="stylesheet" href="test.css" />
+  </head>
+
+  <body>
+    <canvas id="cursorCanvas"> </canvas>
+    <section></section>
+    <img class="random-img" id="random" src="image5.jpg" alt="Random image" />
+    <img class="random-img" src="image2.jpg" alt="Random image" />
+    <img class="random-img" src="image3.jpg" alt="Random image" />
+    <img class="random-img" src="image4.jpg" alt="Random image" />
+    <img class="random-img" src="image1.jpg" alt="Random image" />
+    <img class="random-img" src="image6.jpg" alt="Random image" />
+    <img class="random-img" src="image7.jpg" alt="Random image" />
+    <img class="random-img" src="image1.jpg" alt="Random image" />
+    <h1>Linktree</h1>
+    <div id="container">
+      <div id="blog">
+        <a href="https://blog.naver.com/iizzii112_"
+          ><img id="blogbox" src="daily.png" alt="Random image" />
+          <p id="blogtext">BLOG</p>
+        </a>
+      </div>
+      <div id="instagram-design">
+        <a href="https://www.instagram.com/iiziiz_design/"
+          ><img id="instagram-designbox" src="design.png" alt="Random image" />
+          <p id="instagram-designtext">INSTAGRAMDESIGN</p>
+        </a>
+      </div>
+      <div id="instagram-drawing">
+        <a href="https://www.instagram.com/iiziiz_drawing/"
+          ><img
+            id="instagram-drawingbox"
+            src="drawing.png"
+            alt="Random image"
+          />
+          <p id="instagram-drawingtext">INSTAGRAMDRAWING</p>
+        </a>
+      </div>
+      <div id="email">
+        <a href="https://mail.google.com/mail/u/2/#inbox"
+          ><img id="emailbox" src="email.png" alt="Random image" />
+          <p id="emailtext">EMAIL</p>
+        </a>
+      </div>
+    </div>
+    <div id="email_popup">
+      <p>ookook001@naver.com</p>
+      <p>ezone1111@g.hongik.ac.kr</p>
+      <div id="close">x</div>
+    </div>
+    <script src="line trail.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // 랜덤으로 이동할 이미지 요소를 모두 선택
+        const images = document.querySelectorAll(".random-img");
+
+        function moveImage(image) {
+          // 창 크기 및 이미지 크기 계산
+          const spaceW = window.innerWidth - image.offsetWidth;
+          const spaceH = window.innerHeight - image.offsetHeight;
+
+          // 랜덤 위치 계산
+          const randomX = Math.random() * spaceW;
+          const randomY = Math.random() * spaceH;
+
+          // 이미지 위치 업데이트
+          image.style.left = randomX + "px";
+          image.style.top = randomY + "px";
+        }
+
+        function moveAllImages() {
+          images.forEach((image) => {
+            moveImage(image);
+          });
+        }
+
+        // 모든 이미지를 랜덤하게 이동 (500ms 간격)
+        setInterval(moveAllImages, 2500);
+      });
+    </script>
+    <script src="popup.js"></script>
+  </body>
+</html>

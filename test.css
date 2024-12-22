@@ -1,0 +1,372 @@
+@import url("https://fonts.googleapis.com/css2?family=Agdasima:wght@400;700&family=Dela+Gothic+One&family=Genos:ital,wght@0,100..900;1,100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Orbitron:wght@400..900&family=Poiret+One&family=Space+Grotesk:wght@300..700&family=Tinos:ital,wght@0,400;0,700;1,400;1,700&family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&family=Turret+Road:wght@200;300;400;500;700;800&family=Unbounded:wght@200..900&family=Ysabeau+SC:wght@1..1000&display=swap");
+
+html {
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  background-image: url("background.jpg");
+  background-size: cover;
+}
+
+.random-img {
+  position: absolute; /* 랜덤 위치를 위한 설정 */
+  top: 120%;
+  transition: transform 0.5s ease; /* 부드러운 이동 효과 */
+  height: 25%; /* 이미지 크기 설정 */
+  mix-blend-mode: multiply;
+}
+
+H1 {
+  position: absolute;
+  margin: 0 auto;
+  text-align: center;
+  display: block;
+  bottom: -5vw;
+  width: 100vw;
+  font-size: 22vw;
+  font-optical-sizing: auto;
+  font-family: "Poiret One", serif;
+  font-weight: 100;
+  font-style: normal;
+  letter-spacing: -50%;
+  vertical-align: bottom;
+}
+
+@media screen and (min-width: 1025px) {
+  H1 {
+    width: 100vw;
+    bottom: -5vw;
+  }
+  #container {
+    left: 0;
+    right: 0;
+    max-width: 60vw;
+    width: 50vw;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+  #blogbox #emailbox #instagram-designbox #instagram-drawingbox {
+    height: 10%;
+  }
+  #blogtext {
+    bottom: -25px;
+  }
+  #emailtext {
+    bottom: -25px;
+  }
+  #instagram-designtext {
+    bottom: -25px;
+  }
+  #instagram-drawingtext {
+    bottom: -25px;
+  }
+  .random-img {
+    height: 25%;
+  }
+}
+
+@media screen and (min-width: 769px) and (max-width: 1024) {
+  H1 {
+    width: 100vw;
+    bottom: -3vw;
+  }
+  #container {
+    left: 0;
+    width: 80vw;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    top: 50%;
+  }
+  #blogbox {
+    height: 25px;
+  }
+  #emailbox {
+    height: 25px;
+  }
+  #instagram-designbox {
+    height: 25px;
+  }
+  #instagram-drawingbox {
+    height: 25px;
+  }
+  #blogtext {
+    top: 25px;
+    bottom: -25px;
+  }
+  #emailtext {
+    top: 25px;
+    bottom: -25px;
+  }
+  #instagram-designtext {
+    top: 25px;
+    bottom: -25px;
+  }
+  #instagram-drawingtext {
+    top: 25px;
+    bottom: -25px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  H1 {
+    width: 100vw;
+    bottom: -5vw;
+  }
+  #container {
+    left: 0;
+    width: 80vw;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+  #blogbox {
+    height: 15px;
+  }
+
+  #emailbox {
+    height: 15px;
+  }
+  #instagram-designbox {
+    height: 15px;
+  }
+  #instagram-drawingbox {
+    height: 15px;
+  }
+  #blogtext {
+    top: 25px;
+    bottom: -25px;
+  }
+  #emailtext {
+    top: 25px;
+    bottom: -25px;
+  }
+  #instagram-designtext {
+    top: 25px;
+    bottom: -25px;
+  }
+  #instagram-drawingtext {
+    top: 25px;
+    bottom: -25px;
+  }
+  .random-img {
+    height: 20%;
+  }
+}
+
+a {
+  text-decoration-line: none;
+}
+
+#container {
+  position: absolute;
+  background-color: aqua;
+  display: grid;
+  width: 80vw;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 10px; /* 각 박스 사이에 간격 */
+  margin: 0 auto; /* 가운데 정렬 */
+  text-align: center;
+  top: 40%;
+}
+
+#blog {
+  position: relative;
+}
+#blogbox {
+  position: absolute;
+  height: 100px;
+  opacity: 1;
+  visibility: visible;
+  box-shadow: 2px rgba(0, 0, 0, 0.3);
+}
+
+#blogtext {
+  position: absolute;
+  bottom: -100px;
+  left: 55%;
+  right: 45%;
+  display: none;
+  writing-mode: vertical-rl;
+  text-orientation: upright;
+  justify-content: center;
+  align-items: center;
+  color: rgb(36, 97, 251);
+  font-family: "Noto Sans", serif;
+  font-variation-settings: "wdth" 100;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+  letter-spacing: -0.25em;
+  font-size: 20px;
+  mix-blend-mode: multiply;
+  pointer-events: none; /* 마우스 이벤트 비활성화 */
+  transition: display 0.2s ease; /* 부드러운 전환 효과 */
+}
+
+/* #blogbox에 마우스를 올렸을 때 #blogtext 표시 */
+#blog:hover #blogtext {
+  display: flex; /* 보이도록 변경 */
+  pointer-events: auto; /* 마우스 이벤트 활성화 */
+}
+
+#email {
+  position: relative;
+}
+#emailbox {
+  position: absolute;
+  height: 100px;
+  opacity: 1;
+  visibility: visible;
+  box-shadow: 2px rgba(0, 0, 0, 0.3);
+}
+
+#emailtext {
+  position: absolute;
+  bottom: -100px;
+  left: 60%;
+  right: 40%;
+  display: flex;
+  writing-mode: vertical-rl;
+  text-orientation: upright;
+  justify-content: center;
+  align-items: center;
+  color: rgb(36, 97, 251);
+  font-family: "Noto Sans", serif;
+  font-variation-settings: "wdth" 100;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 20px;
+  letter-spacing: -0.25em;
+  mix-blend-mode: multiply;
+  opacity: 0; /* 기본적으로 숨김 */
+  pointer-events: none; /* 마우스 이벤트 비활성화 */
+  transition: opacity 0.2s ease; /* 부드러운 전환 효과 */
+}
+
+/* #blogbox에 마우스를 올렸을 때 #blogtext 표시 */
+#email:hover #emailtext {
+  opacity: 1; /* 보이도록 변경 */
+  pointer-events: auto; /* 마우스 이벤트 활성화 */
+}
+
+#email_popup {
+  /* 처음에 숨김 */
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 300px;
+  height: 200px;
+  padding: 20px;
+  background: white;
+  box-shadow: rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  text-align: center;
+  z-index: 1000;
+}
+#close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+  font-size: 20px;
+  color: #888;
+  transition: color 0.3s;
+}
+
+#close:hover {
+  color: rgb(36, 97, 251);
+}
+
+#instagram-design {
+  position: relative;
+}
+
+#instagram-designbox {
+  position: absolute;
+  height: 100px;
+  opacity: 1;
+  visibility: visible;
+  box-shadow: 2px rgba(0, 0, 0, 0.3);
+}
+
+#instagram-designtext {
+  position: absolute;
+  bottom: -100px;
+  left: 60%;
+  right: 40%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  writing-mode: vertical-rl;
+  text-orientation: upright;
+  color: rgb(36, 97, 251);
+  font-family: "Noto Sans", serif;
+  font-variation-settings: "wdth" 100;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 20px;
+  letter-spacing: -0.25em;
+  mix-blend-mode: multiply;
+  opacity: 0; /* 기본적으로 숨김 */
+  pointer-events: none; /* 마우스 이벤트 비활성화 */
+  transition: opacity 0.2s ease; /* 부드러운 전환 효과 */
+}
+
+/* #blogbox에 마우스를 올렸을 때 #blogtext 표시 */
+#instagram-design:hover #instagram-designtext {
+  opacity: 1; /* 보이도록 변경 */
+  pointer-events: auto; /* 마우스 이벤트 활성화 */
+}
+
+#instagram-drawing {
+  position: relative;
+}
+
+#instagram-drawingbox {
+  position: absolute;
+  height: 100px;
+  opacity: 1;
+  visibility: visible;
+  box-shadow: 2px rgba(0, 0, 0, 0.3);
+}
+
+#instagram-drawingtext {
+  position: absolute;
+  bottom: -100px;
+  left: 60%;
+  right: 40%;
+  display: flex;
+  writing-mode: vertical-rl;
+  text-orientation: upright;
+  justify-content: center;
+  align-items: center;
+  color: rgb(36, 97, 251);
+  font-family: "Noto Sans", serif;
+  font-variation-settings: "wdth" 100;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 20px;
+  letter-spacing: -0.25em;
+  mix-blend-mode: multiply;
+  opacity: 0; /* 기본적으로 숨김 */
+  pointer-events: none; /* 마우스 이벤트 비활성화 */
+  transition: opacity 0.2s ease;
+}
+
+/* #blogbox에 마우스를 올렸을 때 #blogtext 표시 */
+#instagram-drawing:hover #instagram-drawingtext {
+  opacity: 1; /* 보이도록 변경 */
+  pointer-events: auto; /* 마우스 이벤트 활성화 */
+}
