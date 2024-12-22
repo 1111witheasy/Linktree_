@@ -33,10 +33,10 @@ function animate() {
   ctx.clearRect(0, 0, canvas.width, canvas.height); // 이전 프레임 지우기
 
   // 그림자 및 선 스타일 설정
-  ctx.shadowBlur = 15; // 블러 강도
+  ctx.shadowBlur = 5; // 블러 강도
   ctx.shadowColor = "rgba(4, 155, 255, 0.95)"; // 그림자 색상
   ctx.strokeStyle = "rgba(4, 155, 255, 0.95)"; // 파란색 선
-  ctx.lineWidth = 2; // 선 두께
+  ctx.lineWidth = 1; // 선 두께
 
   // 트레일 그리기
   ctx.beginPath();
